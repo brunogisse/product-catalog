@@ -14,14 +14,14 @@ import com.devsuperior.dscatalog.services.CategoryService;
 
 //This is a Rest Controller Class
 
-@RestController
-@RequestMapping(value = "/categories")
+@RestController // telling to the spring that this class will be a Rest Controller to answer requests on this resource
+@RequestMapping(value = "/categories") //for mapping URLs as www.DNS_da_aplicação/categories 
 public class CategoryResource {
 	
-	@Autowired
+	@Autowired // Spring will inject a valid dependency from this repository
 	private CategoryService service;
 	
-	@GetMapping
+	@GetMapping //setting that the method will be a web service (an end point from the resource from Category). 
 	public ResponseEntity<List<Category>> findAll() {
 		List<Category> list = service.findAll();		
 		return ResponseEntity.ok().body(list);
