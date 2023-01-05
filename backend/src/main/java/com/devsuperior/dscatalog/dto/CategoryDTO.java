@@ -6,19 +6,19 @@ import com.devsuperior.dscatalog.entities.Category;
 
 public class CategoryDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	private Long id;
 	private String name;
-	
-	public CategoryDTO () {
+
+	public CategoryDTO() {
 	}
 
 	public CategoryDTO(Long id, String name) {
 		this.id = id;
 		this.name = name;
 	}
-	
-	public CategoryDTO (Category entity) {
+
+	public CategoryDTO(Category entity) {
 		this.id = entity.getId();
 		this.name = entity.getName();
 	}
@@ -32,13 +32,11 @@ public class CategoryDTO implements Serializable {
 	}
 
 	public String getName() {
-		return name; 
+		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
 
 }
