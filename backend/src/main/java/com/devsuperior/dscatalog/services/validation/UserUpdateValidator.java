@@ -40,7 +40,7 @@ public class UserUpdateValidator implements ConstraintValidator<UserUpdateValid,
 		
 		User user = repository.findByEmail(dto.getEmail());
 		
-		if (user != null) {
+		if (user != null && user.getId() != userId) {
 			list.add(new FieldMessage("email", "email já cadastrado"));
 		}
 		
